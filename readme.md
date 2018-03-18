@@ -32,6 +32,14 @@ composer auto-run-server
 ``
 
 This command should install all required project code dependencies and probably inform about the missing PHP extensions.
+If all went well, then this project user/test should see a message in terminal saying:
+
+``
+[OK] Server listening on http://127.0.0.1:8080
+``
+
+Which mean, that one can visit the following [link](http://127.0.0.1:8080/inventory/show/) (at the moment **this is the only active webpage on the whole project**) to see inventory list in action.
+
 
 # Code Coverage
 
