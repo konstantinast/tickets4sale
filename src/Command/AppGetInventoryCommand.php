@@ -37,7 +37,7 @@ class AppGetInventoryCommand extends Command
         $queryDate = $input->getArgument('query_date');
         $showDate = $input->getArgument('show_date');
 
-        // TODO Move data format to some separate class
+        // NICETOHAVE Move data format to some separate class
         $dateStringFormat = 'YYYY-MM-DD';
 
         if (!self::validateDate($queryDate, $dateStringFormat)) {
@@ -79,7 +79,7 @@ class AppGetInventoryCommand extends Command
         $io->writeln($inventoryViewJson);
     }
 
-
+    // NICETOHAVE refactor to DateTimeHelper::isThisDateStringFormatAcceptable()
     private static function validateDate($date, $format = 'Y-m-d')
     {
         if ($format === 'YYYY-MM-DD') {
