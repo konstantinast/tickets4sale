@@ -1,4 +1,6 @@
 .idea/
+# symfony php unit bridge test coverage folder
+coverage
 
 ###> symfony/framework-bundle ###
 .env
@@ -20,3 +22,7 @@
 ###> symfony/web-server-bundle ###
 .web-server-pid
 ###< symfony/web-server-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###

@@ -1,0 +1,8 @@
+{"inventory": [
+  {"genre": "musical", "shows":[
+    {"title": "cats", "tickets left": "0", "tickets available": "0", "status": "in the past"}
+  ]},
+  {"genre": "comedy", "shows":[
+    {"title": "comedy of errors", "tickets left": "0", "tickets available": "0", "status": "in the past"}
+  ]}
+]}

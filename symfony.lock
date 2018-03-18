@@ -74,8 +74,14 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "keboola/csv": {
+        "version": "1.2.0"
+    },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "myclabs/php-enum": {
+        "version": "1.5.2"
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
@@ -88,6 +94,33 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpunit/php-code-coverage": {
+        "version": "6.0.1"
+    },
+    "phpunit/php-file-iterator": {
+        "version": "1.4.5"
+    },
+    "phpunit/php-text-template": {
+        "version": "1.2.1"
+    },
+    "phpunit/php-timer": {
+        "version": "2.0.0"
+    },
+    "phpunit/php-token-stream": {
+        "version": "3.0.0"
+    },
+    "phpunit/phpunit": {
+        "version": "4.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.7",
+            "ref": "c276fa48d4713de91eb410289b3b1834acb7e403"
+        }
+    },
+    "phpunit/phpunit-mock-objects": {
+        "version": "6.0.1"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -112,6 +145,9 @@
             "version": "4.0",
             "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
         }
+    },
+    "swaggest/json-diff": {
+        "version": "v3.2.1"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"

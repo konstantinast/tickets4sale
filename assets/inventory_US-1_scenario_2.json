@@ -1,0 +1,14 @@
+{"inventory": [
+  {"genre": "musical", "shows":[
+    {"title": "cats", "tickets left": "50", "tickets available": "5",
+      "status": "open for sale"}
+  ]},
+  {"genre": "comedy", "shows":[
+    {"title": "comedy of errors", "tickets left": "100", "tickets available":
+    "10", "status": "open for sale"}
+  ]},
+  {"genre": "drama", "shows":[
+    {"title": "everyman", "tickets left": "100", "tickets available": "10",
+      "status": "open for sale"}
+  ]}
+]}
