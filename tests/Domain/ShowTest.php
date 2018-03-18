@@ -20,6 +20,7 @@ class ShowTest extends TestCase
         $genre = new ShowGenre(ShowGenre::musical);
 
         $showInstance = new Show($title, $openingDay, $genre);
+        $ticketPrice = 70;
 
         // Test settings
         $queryDate = new \DateTime('2017-01-01');
@@ -29,7 +30,8 @@ class ShowTest extends TestCase
             200,
             0,
             new ShowStatus(ShowStatus::sale_not_started),
-            new ShowLocation(ShowLocation::big_hall)
+            new ShowLocation(ShowLocation::big_hall),
+            $ticketPrice
         );
 
         // The test
@@ -54,6 +56,11 @@ class ShowTest extends TestCase
         $this->assertEquals(
             $showInfoInstanceExpected->getStatus(),
             $showInfoInstance->getStatus()
+        );
+
+        $this->assertEquals(
+            $showInfoInstanceExpected->getPrice(),
+            $showInfoInstance->getPrice()
         );
     }
 

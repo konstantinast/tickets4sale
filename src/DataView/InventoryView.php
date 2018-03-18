@@ -16,6 +16,14 @@ class InventoryView implements \JsonSerializable
         $this->inventory[] = $item;
     }
 
+    /**
+     * @return InventoryItemView[]
+     */
+    public function getInventory(): array
+    {
+        return $this->inventory;
+    }
+
     public function serializeToJson()
     {
         $encoders = [new JsonEncoder()];

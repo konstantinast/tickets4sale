@@ -3,6 +3,8 @@
 
 namespace App\Factory;
 
+use App\BusinessRules\ShowTicketPricing;
+use App\Domain\ShowGenre;
 use App\Domain\ShowInfo;
 use App\Domain\ShowSaleDetails;
 use App\Domain\ShowStatus;
@@ -13,15 +15,20 @@ abstract class ShowInfoFactory
         string $title,
         \DateTime $openingDate,
         \DateTime $showDate,
-        \DateTime $queryDate
+        \DateTime $queryDate,
+        ShowGenre $showGenre
     ): ShowInfo {
         $whichShowDay = ShowSaleDetails::getWhichShowDayItIs($openingDate, $showDate);
         $whichSaleDay = ShowSaleDetails::getWhichDayOfSale($queryDate, $showDate);
+        $showTicketPricing = new ShowTicketPricing($showGenre);
+        $showDiscountDetails = ShowDiscountDetailsFactory::create($openingDate, $showDate);
+        $discount = $showDiscountDetails->getDiscount();
 
         $showStatus = ShowStatusFactory::create($whichShowDay, $whichSaleDay);
 
         $ticketsLeft = 0; // default
         $ticketsAvailable = 0; // default
+        $price = $showTicketPricing->getPrice() * ((100 - $discount) / 100);
 
         // Calculate based on client specs
         $saleDetails = new ShowSaleDetails($openingDate, $showDate);
@@ -61,7 +68,7 @@ abstract class ShowInfoFactory
             }
         }
 
-        $instance = new ShowInfo($title, $ticketsLeft, $ticketsAvailable, $showStatus, $location);
+        $instance = new ShowInfo($title, $ticketsLeft, $ticketsAvailable, $showStatus, $location, $price);
 
         return $instance;
     }

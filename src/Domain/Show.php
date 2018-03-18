@@ -31,7 +31,7 @@ class Show
 
     public function getShowInfo(\DateTime $showDate, \DateTime $queryDate): ShowInfo
     {
-        $showInfo = ShowInfoFactory::create($this->title, $this->openingDay, $showDate, $queryDate);
+        $showInfo = ShowInfoFactory::create($this->title, $this->openingDay, $showDate, $queryDate, $this->genre);
 
         return $showInfo;
     }

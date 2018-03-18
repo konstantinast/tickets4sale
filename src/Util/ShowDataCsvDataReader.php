@@ -5,7 +5,7 @@ namespace App\Util;
 
 
 use App\Factory\ShowDataFactory;
-use Keboola\Csv\CsvFile;
+use League\Csv\Reader;
 
 class ShowDataCsvDataReader extends ShowDataFactory
 {
@@ -23,7 +23,10 @@ class ShowDataCsvDataReader extends ShowDataFactory
 
     function getShowsData(): ShowDataIterator
     {
-        $csvRecords = new CsvFile($this->filename);
+        $csvContent = $this->getCsvContent($this->filename);
+        $csvReader = Reader::createFromString($csvContent);
+        $csvRecords = $csvReader->getIterator();
+
         $showsData = new ShowDataIterator();
 
         foreach ($csvRecords as $record) {
@@ -37,6 +40,16 @@ class ShowDataCsvDataReader extends ShowDataFactory
         }
 
         return $showsData;
+    }
+
+    private function getCsvContent($filename)
+    {
+        $rawContent = file_get_contents($filename);
+
+        // Lets fix the file content a bit
+        $content = preg_replace("/[\r\n]{1,}|[\r]{1,}|[\n]{1,}/", "\n", $rawContent); // hopefully this will be enough
+
+        return $content;
     }
 
 }

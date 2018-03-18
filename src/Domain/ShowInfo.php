@@ -13,19 +13,22 @@ class ShowInfo
     private $ticketsLeft;
     private $ticketsAvailable;
     private $location;
+    private $price;
 
     public function __construct(
         String $title,
         int $ticketsLeft,
         int $ticketsAvailable,
         ShowStatus $status,
-        ShowLocation $location
+        ShowLocation $location,
+        float $price
     ) {
         $this->title = strtolower($title);
         $this->ticketsLeft = $ticketsLeft;
         $this->ticketsAvailable = $ticketsAvailable;
         $this->status = $status;
         $this->location = $location;
+        $this->price = $price;
     }
 
     /**
@@ -66,6 +69,14 @@ class ShowInfo
     public function getLocation(): ShowLocation
     {
         return $this->location;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 
 

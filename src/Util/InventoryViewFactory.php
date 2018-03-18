@@ -44,7 +44,8 @@ class InventoryViewFactory
                 $show->getTitle(),
                 $showInfo->getTicketsLeft(),
                 $showInfo->getTicketsAvailable(),
-                $showInfo->getStatus()
+                $showInfo->getStatus(),
+                $showInfo->getPrice()
             );
 
             $genreToShowsMap[$genre][] = $showItem;
