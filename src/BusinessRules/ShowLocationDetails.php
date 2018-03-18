@@ -38,8 +38,8 @@ class ShowLocationDetails
     public function __construct(ShowLocation $showLocation)
     {
         $this->location = $showLocation;
-        $this->hallCapacity = self::$hallCapacityValues[(string)$showLocation];
-        $intervalFromTo = self::$showDayFromToIntervalValues[(string)$showLocation];
+        $this->hallCapacity = self::$hallCapacityValues[$showLocation->getKey()];
+        $intervalFromTo = self::$showDayFromToIntervalValues[$showLocation->getKey()];
         $this->intervalStartDay = $intervalFromTo['from'];
         $this->intervalEndDay = $intervalFromTo['to'];
     }
