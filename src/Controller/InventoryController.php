@@ -27,6 +27,7 @@ class InventoryController extends Controller
         $form = $this->createFormBuilder()
             ->add('showDate', DateType::class, [
                 'label' => 'Show date:',
+                'data' => new \DateTime(), // defaults to now by server time
                 'widget' => 'single_text',
                 'html5' => false,
                 'format' => 'yyyy-MM-dd',
